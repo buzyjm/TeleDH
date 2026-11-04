@@ -91,6 +91,10 @@ protocol; they are something else.
 
 ## Setup
 
+On a different machine, OS or CPU architecture, follow
+[DEPLOYMENT.md](DEPLOYMENT.md) instead: a virtual environment with the pinned
+[requirements.txt](requirements.txt), and the settings to change per platform.
+
 Already done in this directory, but to reproduce: this machine has no `pip`,
 no `venv`, and `sudo` needs a password, so dependencies live in a project-local
 `vendor/` directory installed with pip's standalone zipapp.
@@ -450,6 +454,7 @@ Isolated under `telehand/experimental/`, labelled `[experimental]` in
 
 ```
 run.py                      entry point: puts vendor/ on sys.path, runs the CLI
+requirements.txt            pinned, tested dependency versions (see DEPLOYMENT.md)
 telehand/
   bootstrap.py              vendor/ and cmeel path setup, native log quieting
   paths.py                  every file and directory the project uses
@@ -494,6 +499,7 @@ has its own [README](data/README.md) describing each measurement file.
 
 | document | contents |
 |---|---|
+| [DEPLOYMENT.md](DEPLOYMENT.md) | installing on another machine, OS or CPU architecture; what is machine-specific and where to change it |
 | [docs/architecture.md](docs/architecture.md) | data flow of the stable path, the visualisation side path, safety layers, command dispatch, where files are written |
 | [docs/experiments.md](docs/experiments.md) | what the profiling and characterisation tools measured, and the settings they led to |
 | [docs/frames.md](docs/frames.md) | wrist-local joint frames from MediaPipe landmarks: conventions and derivation |

@@ -1,0 +1,16 @@
+# Versions known to work on the reference machine (Ubuntu, x86_64, Python 3.12).
+# Install into a virtual environment:
+#   python3.12 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt
+# The ranges in pyproject.toml are looser; these pins reproduce the tested setup.
+
+numpy==2.5.3
+scipy==1.18.1
+opencv-python==5.0.0.93
+mediapipe==1.0.1
+pyserial==3.5
+
+# Optional: MuJoCo-rendered robot hand view. Without these the view falls back to
+# a convex-hull renderer (pure numpy + cv2).
+mujoco==3.17.0
+glfw==2.11.0
+PyOpenGL==3.1.10

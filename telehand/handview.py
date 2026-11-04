@@ -176,6 +176,7 @@ class HullHandRenderer:
         pitch: float = DEFAULT_PITCH,
         measured: Sequence[float] | None = None,
         background=BG,
+        zoom: float = 1.0,
     ) -> np.ndarray:
         import cv2
 
@@ -190,6 +191,7 @@ class HullHandRenderer:
         self._frame_view = view
 
         centre, scale = self._framing(view, size)
+        scale *= zoom
         img = np.full((size[1], size[0], 3), background, np.uint8)
 
         def project(p: np.ndarray) -> np.ndarray:
